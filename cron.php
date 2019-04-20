@@ -101,7 +101,17 @@ foreach ($accounts as $account) {
 						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 						curl_exec($ch);
 					}
-					
+				
+				}
+
+				if ($binom) {
+					foreach ($keitaro_campaigns as $keitaro_campaign) {
+
+						$binom_url = 'http://' . $binom_domain . '/?page=save_update_costs&camp_id=1&date=12&timezone=3
+&token_number=2&token_value=' . $adset['id'] . '&cost=' . $insight['spend'] . '&date_s=' . $insight['date_start'] . '&date_e=' . $insight['date_start'] . '&api_key=' . $binom_api_key;
+						file_get_contents($binom_url);
+
+					}
 
 				}
 			} 
