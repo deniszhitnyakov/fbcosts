@@ -5,6 +5,8 @@ require_once __DIR__ . '/config.php';
 
 $keitaro_campaigns = str_replace(' ', '', $keitaro_campaigns);
 $keitaro_campaigns = explode(',', $keitaro_campaigns);
+$keitaro_campaigns = str_replace(' ', '', $binom_campaigns);
+$keitaro_campaigns = explode(',', $binom_campaigns);
 
 //
 // получаем список аккаунтов
@@ -92,7 +94,6 @@ foreach ($accounts as $account) {
 					];
 
 					foreach ($keitaro_campaigns as $keitaro_campaign) {
-						echo $keitaro_campaign;
 						$ch = curl_init();
 						curl_setopt($ch, CURLOPT_URL, 'http://' . $keitaro_domain . '/admin_api/v1/campaigns/' . $keitaro_campaign . '/update_costs');
 						curl_setopt($ch, CURLOPT_HTTPHEADER, array('Api-Key: ' . $keitaro_api_key));
@@ -105,7 +106,7 @@ foreach ($accounts as $account) {
 				}
 
 				if ($binom) {
-					foreach ($keitaro_campaigns as $keitaro_campaign) {
+					foreach ($binom_campaigns as $binom_campaign) {
 
 						$binom_url = 'http://' . $binom_domain . '/?page=save_update_costs&camp_id=1&date=12&timezone=3
 &token_number=2&token_value=' . $adset['id'] . '&cost=' . $insight['spend'] . '&date_s=' . $insight['date_start'] . '&date_e=' . $insight['date_start'] . '&api_key=' . $binom_api_key;

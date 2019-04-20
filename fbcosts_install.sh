@@ -7,5 +7,5 @@ apache2ctl restart
 cd /var/www/html
 wget https://github.com/deniszhitnyakov/fbcosts/archive/master.zip
 unzip master.zip
-mv -R fbcosts-master fbcosts
+mv fbcosts-master fbcosts
 rm master.zip
