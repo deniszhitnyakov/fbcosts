@@ -8,3 +8,4 @@ cd /var/www/html
 wget https://github.com/deniszhitnyakov/fbcosts/archive/master.zip
 unzip master.zip
 mv -R fbcosts-master fbcosts
+rm master.zip
