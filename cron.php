@@ -5,8 +5,8 @@ require_once __DIR__ . '/config.php';
 
 $keitaro_campaigns = str_replace(' ', '', $keitaro_campaigns);
 $keitaro_campaigns = explode(',', $keitaro_campaigns);
-$keitaro_campaigns = str_replace(' ', '', $binom_campaigns);
-$keitaro_campaigns = explode(',', $binom_campaigns);
+$binom_campaigns = str_replace(' ', '', $binom_campaigns);
+$binom_campaigns = explode(',', $binom_campaigns);
 
 //
 // получаем список аккаунтов
@@ -88,7 +88,7 @@ foreach ($accounts as $account) {
 						'end_date' => $insight['date_start'] . ' 23:59:59',
 						'cost' => $insight['spend'],
 						'currency' => $keitaro_currency,
-						'timezone' => $keitsro_timezone,
+						'timezone' => $keitaro_timezone,
 						'only_campaign_uniques' => 1,
 						'filters' => [ 'sub_id_' . $keitaro_subid => $adset['id'] ]
 					];
