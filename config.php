@@ -7,6 +7,7 @@ $binom_api_key = '';        // API ключ бинома
 $binom_domain = 'mybinom.ru'; // Домен, на котором установлен трекер. Писать без http:// и прочей херни!!!
 $binom_subid = '1';
 $binom_campaigns = '1';
+$binom_index = 'index.php'; // Имя индексного файла бинома
 
 
 //
